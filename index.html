@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Socker Skills - A plataforma para as melhores clipadas de futebol." />
+    <meta name="keywords" content="futebol, clipadas, análises, destaques" />
+    <meta name="author" content="Seu Nome" />
+    <title>Site TESTE Feito em JavaScript!</title>
+    <style>
+        /* Estilo moderno e responsivo */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #000; /* Cor de fundo preta */
+            color: #fff; /* Cor da fonte branca */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2rem;
+            box-sizing: border-box;
+        }
+        header {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 8px rgba(255,255,255,0.3); /* Sombra mais clara */
+        }
+        nav {
+            margin-bottom: 2rem;
+        }
+        nav a {
+            color: #d6d6f7;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #ff7e5f; /* Cor ao passar o mouse */
+        }
+        p.subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            color: #d6d6f7; /* Cor do subtítulo */
+            text-shadow: 1px 1px 5px rgba(255,255,255,0.2); /* Sombra mais clara */
+        }
+        button {
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 25px;
+            background: #ff7e5f; /* Cor de fundo do botão */
+            color: #fff; /* Cor do texto do botão */
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            user-select: none;
+        }
+        button:hover {
+            background: #feb47b; /* Cor ao passar o mouse */
+            box-shadow: 0 8px 20px rgba(255, 126, 95, 0.4);
+            transform: translateY(-2px); /* Efeito de elevação */
+        }
+        button:active {
+            transform: translateY(0); /* Retorna à posição original ao clicar */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra reduzida ao clicar */
+        }
+        main {
+            text-align: center;
+            max-width: 500px;
+            background: rgba(255,255,255,0.15); /* Fundo do main */
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+            backdrop-filter: blur(10px);
+            margin-bottom: 2rem;
+        }
+        #message {
+            margin-top: 1.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fff; /* Cor da mensagem */
+            text-shadow: 1px 1px 3px rgba(255,255,255,0.5); /* Sombra mais clara */
+        }
+        footer {
+            margin-top: auto;
+            font-size: 0.9rem;
+            color: #eee; /* Cor do texto do rodapé */
+            padding: 1rem 0 0 0;
+            text-align: center;
+        }
+        /* Estilo do formulário */
+        form {
+            display: flex;
+            flex-direction: column;
+            margin-top: 2rem;
+        }
+        input, textarea {
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border: none;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+        input::placeholder, textarea::placeholder {
+            color: #d6d6f7;
+        }
+        button.submit {
+            margin-top: 1rem;
+        }
+        /* Estilo da seção de Feedbacks */
+        #testimonials {
+            margin: 2rem 0;
+            text-align: center;
+        }
+        .testimonial {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        /* Estilo da galeria */
+        #gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+        .gallery-item {
+            width: 150px;
+            height: 100px;
+            margin: 0.5rem;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+            border-radius: 10px;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        /* Responsividade */
+        @media (max-width: 600px) {
+            header {
+                font-size: 2rem;
+            }
+            p.subtitle {
+                font-size: 1rem;
+            }
+            button {
+                font-size: 1rem;
+            }
+            .gallery-item {
+                width: 100px;
+                height: 70px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>Socker Skills</header>
+    <nav>
+        <a href="#about" aria-label="Sobre">Sobre</a>
+        <a href="#services" aria-label="Serviços">Serviços</a>
+        <a href="#testimonials" aria-label="Feedbacks">Feedbacks</a>
+        <a href="#gallery" aria-label="Galeria">Galeria</a>
+        <a href="#contact" aria-label="Contato">Contato</a>
+    </nav>
+    <p class="subtitle">Site com as melhores clipadas</p>
+    <main>
+        <button id="magicButton">Acesse ao Socker Clipadas!</button>
+        <div id="message" aria-live="polite"></div>
+    </main>
+    <section id="about">
+        <h2>Sobre Nós</h2>
+        <p>Somos uma plataforma dedicada a compartilhar as melhores clipadas de futebol.</p>
+    </section>
+    <section id="services">
+        <h2>Serviços</h2>
+        <p>Oferecemos uma variedade de serviços relacionados a análises de jogos e destaques.</p>
+    </section>
+    <section id="testimonials">
+        <h2>Feedbacks</h2>
+        <div class="testimonial">"Muito Bom👍🐒" - Ana Lúcia</div>
+        <div class="testimonial">"Péssima opção de conteúdo para se consumir!" - Ednilson Nascimento</div>
+        <div class="testimonial">"Gosto de assistir junto da minha família!" - Gilson Ferreira de Souza</div>
+    </section>
+    <section id="gallery">
+        <h2>Galeria</h2>
+        <div class="gallery-item">
+            <a href="https://youtu.be/NNYe4DTWGUk?si=5D_2KCxYXN8uR1Is" target="_blank" rel="noopener noreferrer">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZlCt5vugzCFad72rYiH8dKpCeYrsePYsFNw&s" alt="Skills Neymar1">
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="https://youtu.be/XgnPF_3zAPk?si=YUhJG2BgGo4jmEFf" target="_blank" rel="noopener noreferrer">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQojbR0CXvJsKDCrEl_PEJfdFSbnQyZ2bT_Ww&s" alt="SkillsNeymar2">
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="https://youtu.be/M-5O3WGW8t8?si=LkD3oalokCeAIWz1" target="_blank" rel="noopener noreferrer">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShqgd4fn05_ep5_88m3p-b9QY3qH8Ox7Y7lg&s" alt="SkillsNeymar3">
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="https://youtu.be/x4TvagVSDUY?si=AH9Sv1Q5vEWYi0DW" target="_blank" rel="noopener noreferrer">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPMwXpLC8h6LGGCvRmJPD_eGZkSj0W425QCA&s" alt="SkillsNeymar4">
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="https://youtu.be/-xVP9lhjxlA?si=DnIHuOKetVra-Gzg" target="_blank" rel="noopener noreferrer">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMp4-V_yNuKQUPzvj5u2rF2P_UpAy7QY0kAA&s" alt="SkillsNeymar5">
+            </a>
+        </div>
+    </section>
+    <section id="contact">
+        <h2>Contato</h2>
+        <form id="contactForm">
+            <input type="text" placeholder="Seu Nome" required />
+            <input type="email" placeholder="Seu Email" required />
+            <textarea placeholder="Sua Mensagem" rows="4" required></textarea>
+            <button type="submit" class="submit">Enviar Mensagem</button>
+        </form>
+    </section>
+    <footer>
+        <p>© 2025 Todos os Direitos Reservados</p>
+        <p>
+            <a href="#" style="color: #d6d6f7;">Termos de Uso</a> | 
+            <a href="#" style="color: #d6d6f7;">Política de Privacidade</a>
+        </p>
+    </footer>
+
+    <script>
+      const button = document.getElementById('magicButton');
+      const messageDiv = document.getElementById('message');
+      const messages = [
+        "Você não tem acesso!",
+        "Obrigado.",
+        "TESTE!!!"
+      ];
+      let currentIndex = 0;
+
+      button.addEventListener('click', () => {
+          messageDiv.textContent = messages[currentIndex];
+          currentIndex = (currentIndex + 1) % messages.length;
+      });
+
+      // Form submission handling
+      const contactForm = document.getElementById('contactForm');
+      contactForm.addEventListener('submit', (event) => {
+          event.preventDefault();
+          alert('Mensagem enviada! Obrigado pelo seu contato.');
+          contactForm.reset(); // Limpa o formulário após o envio
+      });
+    </script>
+</body>
+</html>
